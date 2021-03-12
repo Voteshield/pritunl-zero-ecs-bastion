@@ -2,7 +2,7 @@
 
 This is a heavily simplified SSH Bastion host meant to run on AWS ECS Fargate in conjunction with the zero-trust solution [Pritunl-Zero](https://github.com/pritunl). Users connect using the shared `$BASTION_USER`, but authenticate using their signed SSH keys. Here are some general features as to why this is used in the first place:
 
-- Provides a simple health check server for ALB Target Groups
+- Provides a simple health check server for NLB Target Groups (if you so please)
 - Stateless
 - Independent of the Pritunl-Zero application server
 - Doesn't have Host ID change errors when paired with an [EIP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
