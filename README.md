@@ -2,8 +2,9 @@
 
 This is a heavily simplified SSH Bastion host meant to run on AWS ECS Fargate in conjunction with the zero-trust solution [Pritunl-Zero](https://github.com/pritunl). Users connect using the shared `$BASTION_USER`, but authenticate using their signed SSH keys. Here are some general features as to why this is used in the first place:
 
+- Docker-fies the [Bastion Host configuration](https://docs.pritunl.com/docs/bastion-ssh-host) for Pritunl-Zero
 - Provides a simple health check server for NLB Target Groups (if you so please)
-- Stateless
+- Stateless, and fits better into a docker/container ecosystem than having [the Pritunl-Zero app server host Docker](https://docs.pritunl.com/docs/getting-started-bastion-server)
 - Independent of the Pritunl-Zero application server
 - Doesn't have Host ID change errors when paired with an [EIP](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html)
 - Forces use of [Ed25519](https://ed25519.cr.yp.to/), which actually cuts back on a ton of the SSH auth spam public facing bastions have to deal with
