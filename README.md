@@ -16,11 +16,11 @@ In order for this to run, you'll need a handful of env variables:
 docker run --rm \
 	--name pritunl-zero-ecs-bastion \
 	-p 22:22 \
-    -p 8000:8000 \
+    	-p 8000:8000 \
 	-e BASTION_SSH_HOST_ED25519_KEY="your-ssh-host-key" \
-    -e PTZ_ROLE="pritunl-zero-allowed-role" \
+    	-e PTZ_ROLE="pritunl-zero-allowed-role" \
 	-e TP_URL="your-trusted-pubkey-url" \
-    -e BASTION_USER="root-just-kidding" \
+    	-e BASTION_USER="root-just-kidding" \
 	.
 ```
 
