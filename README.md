@@ -50,8 +50,8 @@ You can find this under the "Authorities" section of the Pritunl-Zero management
 
 #### Env *BASTION_USER*
 
-The username for the shared account users will utilize to log on with.
+The username for the shared local account users will utilize to authenticate to the host with. Note that *usually* shared accounts are a horrible practice, but at this point the users are authenticated via their IAP account and their keys are signed.
 
 #### AWS Elastic IP
 
-Ah, [the problem with Fargate](https://itnext.io/getting-a-persistant-address-to-a-ecs-fargate-container-3df5689f6e56). There are a lot of ways to tackle this, but the long story short is you will need a persistent IP to prevent host key ID change errors. 
+Ah, [the problem with Fargate](https://itnext.io/getting-a-persistant-address-to-a-ecs-fargate-container-3df5689f6e56). There are a lot of ways to tackle this, but the long story short is you will need a persistent IP to prevent host key ID change errors. At VoteShield, we use a Network Load Balancer.
