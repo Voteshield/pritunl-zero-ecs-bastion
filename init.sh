@@ -37,6 +37,6 @@ $TRUSTED_PUBKEY
 EOF
 
 echo starting health check server
-python3 -m http.server > /dev/null 2>&1 &
+python3 -m http.server -d web > /dev/null 2>&1 &
 
 /usr/sbin/sshd -e -D -f /etc/ssh/sshd_config
